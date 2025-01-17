@@ -1,8 +1,5 @@
 .PHONY : all
 
+# to build - cd into 'build' and run 'make'
 all :
-	cd build
-	pdflatex ../resume.tex
-
-show :
 	explorer.exe build/resume.pdf
