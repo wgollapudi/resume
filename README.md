@@ -1,8 +1,6 @@
 # resume
-LaTeX template for my personal resume
+My personal resume + history
 
-Based off of [sb2nov/resume](https://github.com/sb2nov/resume/)
+This was origanally a fork of [Jake's Resume Template](https://github.com/jakegut/resume) and uses his excellently created template.
 
-Use it on overleaf: [Jake's Resume](https://www.overleaf.com/latex/templates/jakes-resume/syzfjbzwjncs) (Not updated)
-
-![Resume Preview](resume.png)
+That resume template was itself based off of [sb2nov/resume](https://github.com/sb2nov/resume/)
