@@ -18,6 +18,7 @@
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
+\usepackage{ifthen}
 \input{glyphtounicode}
 
 
@@ -99,6 +100,7 @@
 \newcommand{\resumeItemListStart}{\begin{itemize}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
+\providecommand{\version}{bytecode}
 %-------------------------------------------
 %%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -162,7 +164,7 @@
       \resumeItemListStart
         \resumeItem{Collaborated with AWS Principal Engineers on Amazon OpenSearch, contributing to the visualization dashboards through hands-on development and agile team practices.}
         \resumeItem{Delivered 100+ lines of code that were approved and deployed to production, strengthening OpenSearch’s capabilities as an open-source data search and visualization tool.}
-        \resumeItem{Gained proficiency in Git and GitHub, while developing team collaboration skills through agile development cycles focused on iterative learning and software best practices.}
+        \resumeItem{Gained proficiency in Git and GitHub, developing teamwork and communication skills through agile development cycles focused on iterative learning and software best practices.}
       \resumeItemListEnd
 
     \resumeSubheading
@@ -181,21 +183,16 @@
 %-----------PROJECTS-----------
 \section{Projects}
     \resumeSubHeadingListStart
-      \begin{comment}
-      \resumeProjectHeading
-          {\textbf{NBA Game Prediction Model} $|$ \emph{Python, PyTorch, scikit-learn, NumPy, Pandas}}{July 2024 -- Present}
-          \resumeItemListStart
-            \resumeItem{Designed a NBA outcome prediction model in Python using a Random Forest of Decision Trees, achiving 65.2\% accuracy (surpassing Vegas odds at 64.3\%).}
-            \resumeItem{Optimized proformance through hyperperameter tuning, regularization, and feature engineering.}
-          \resumeItemListEnd
-      \end{comment}
-      \resumeProjectHeading
-          {\textbf{Personal Bytecode Compiler Project} $|$ \emph{C, Git}}{Sep. 2023 -- Present}
-          \resumeItemListStart
-            \resumeItem{Developed a multi-pass bytecode compiler, learning from "Crafting Interpreters" and the "Dragon Book" to implement a custom language from scratch.}
-            \resumeItem{Designed core components, including a custom garbage collector and symbol table for effective memory management and identifier resolution.}
-            \resumeItem{Leveraged recursive parsing and custom-built data structures (e.g., hash tables, dynamic arrays) to optimize just-in-time execution.}
-          \resumeItemListEnd
+      \ifthenelse{\equal{\version}{bytecode}}{%
+        \input{../project_bytecode.tex}%
+      }{}
+      \ifthenelse{\equal{\version}{dohnaghy}}{%
+        \input{../project_dohnaghy.tex}%
+      }{}
+      \ifthenelse{\equal{\version}{both}}{%
+        \input{../project_bytecode.tex}%
+        \input{../project_dohnaghy.tex}%
+      }{}
     \resumeSubHeadingListEnd
 
 %-----------HONORS/AWARDS---------------
